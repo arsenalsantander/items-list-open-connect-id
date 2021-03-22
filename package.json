@@ -1,7 +1,7 @@
 {
-  "name": "greeting-app",
+  "name": "todo-app",
   "version": "1.0.0",
-  "description": "greeting app",
+  "description": "todo app",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
