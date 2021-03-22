@@ -1,7 +1,23 @@
 const express = require('express');
 const router = express.Router();
 // In memory Storage
-const items = [];
+const items = [
+    {
+        id: '1',
+        name: 'buy bananas',
+        description: 'buy some bananas at tesco'
+    },
+    {
+        id: '2',
+        name: 'buy chocolate',
+        description: 'buy some chocolate with 85%'
+    },
+    {
+        id: '3',
+        name: 'buy apples',
+        description: 'buy some apples at tesco'
+    }
+];
 
 router.get('/', function(req, res) {
   res.status(200).send(items);
