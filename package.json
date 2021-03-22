@@ -1,0 +1,27 @@
+{
+  "name": "greeting-app",
+  "version": "1.0.0",
+  "description": "greeting app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misanche/3scaleworkshop-greeting-app.git"
+  },
+  "keywords": [
+    "greeting",
+    "nodejs"
+  ],
+  "author": "Mikel Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misanche/3scaleworkshop-greeting-app/issues"
+  },
+  "homepage": "https://github.com/misanche/3scaleworkshop-greeting-app#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
