@@ -60,3 +60,9 @@ components:
         id: "3423432432"
         name: Bananas
         description: Buy bananas at Carrefour
+  securitySchemes:
+    api-key:
+      type: apiKey
+      description: Use a 3scale API Key
+      name: api-key
+      in: header
