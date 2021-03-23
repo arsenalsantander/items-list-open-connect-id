@@ -19,7 +19,7 @@ node() {
             toolbox: [ openshiftProject: params.OCP_PROJECT,
                        destination: params.INSTANCE,
                        insecure: "yes",
-                       image: "quay.io/redhat/3scale-toolbox:master",
+                       image: "quay.io/redhat/3scale-toolbox:v0.17.1",
                        secretName: params.SECRET_NAME],
             service: [:],
             applications: [
