@@ -66,3 +66,6 @@ components:
       description: Use a 3scale API Key
       name: api-key
       in: header
+security:
+    -
+        api-key: []
