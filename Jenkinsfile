@@ -13,9 +13,7 @@ node() {
         service = toolbox.prepareThreescaleService(
             openapi: [filename: params.PARAMS_OPENAPI_SPEC],
             environment: [ baseSystemName: params.APP_NAME,
-    					   privateBaseUrl: params.PRIVATE_URL,
-    					   stagingPublicBaseURL: params.STAGING_URL,
-    					   productionPublicBaseURL: params.PRODUCTION_URL],
+    					   privateBaseUrl: params.PRIVATE_URL],
             toolbox: [ openshiftProject: params.OCP_PROJECT,
                        destination: params.INSTANCE,
                        insecure: "yes",
