@@ -1,9 +1,9 @@
 ---
 openapi: 3.0.2
 info:
-  title: Todo List
+  title: Items List
   version: 1.0.0
-  description: Todo List Spec
+  description: 'Items List Spec '
 paths:
   /items:
     get:
@@ -18,31 +18,33 @@ paths:
               examples:
                 items:
                   value:
-                  - id: "123123"
-                    name: Buy Bananas
-                    description: Buy Bananas
-                  - id: "345345"
-                    name: Buy Chocolate
-                    description: 85% chocolate
+                    - id: "123123"
+                      name: Buy Bananas
+                      description: Buy Bananas
+                    - id: "345345"
+                      name: Buy Chocolate
+                      description: 85% chocolate
           description: valid Response
       operationId: getItems
     post:
       requestBody:
+        description: post method
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Item'
             examples:
               item:
-                value:
-                  id: "123123"
-                  name: Buy Bananas
-                  description: Buy Bananas
+                value: |2
+                       {
+                           "id": "123123",
+                           "name": "Buy Bananas",
+                           "description": "Buy Bananas"
+                       }
         required: true
       responses:
         "201":
           description: Created description
-      operationId: createItem
 components:
   schemas:
     Item:
@@ -61,11 +63,7 @@ components:
         name: Bananas
         description: Buy bananas at Carrefour
   securitySchemes:
-    api-key:
-      type: apiKey
-      description: Use a 3scale API Key
-      name: api-key
-      in: header
-security:
-    -
-        api-key: []
+    open-id-connect:
+      openIdConnectUrl: https://user5-admin.apps.cluster-rkksh.rkksh.sandbox1063.opentlc.com/
+      type: openIdConnect
+      description: Use a 3scale Open Id Connect
