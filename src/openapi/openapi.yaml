@@ -1,9 +1,9 @@
 ---
 openapi: 3.0.2
 info:
-  title: Items List
+  title: 'Todo List OpenID Connect '
   version: 1.0.0
-  description: 'Items List Spec '
+  description: Todo List Spec using OpenID Connect
 paths:
   /items:
     get:
@@ -24,7 +24,7 @@ paths:
                     - id: "345345"
                       name: Buy Chocolate
                       description: 85% chocolate
-          description: valid Response
+          description: valid response
       operationId: getItems
     post:
       requestBody:
@@ -64,6 +64,13 @@ components:
         description: Buy bananas at Carrefour
   securitySchemes:
     open-id-connect:
-      openIdConnectUrl: https://user5-admin.apps.cluster-rkksh.rkksh.sandbox1063.opentlc.com/
-      type: openIdConnect
-      description: Use a 3scale Open Id Connect
+      flows:
+        clientCredentials:
+          tokenUrl: http://sso-rh-sso.apps.cluster-rkksh.rkksh.sandbox1063.opentlc.com/auth/realms/user8/protocol/openid-connect/token
+          scopes:
+            openid: ""
+      type: oauth2
+      description: spec for open-id-connect
+security:
+  - open-id-connect:
+      - openid
